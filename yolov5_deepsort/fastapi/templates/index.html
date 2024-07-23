@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Upload</title>
+    <style>
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+        .detection {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .detection .alert {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Video for Garbage Detection</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input name="file" type="file" id="file-input">
+        <input type="submit" value="Upload">
+    </form>
+    <h2>Uploaded Video</h2>
+    <video id="uploaded-video" controls style="display:none;">
+        <source id="video-source" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2>Detection Results</h2>
+    <div id="results"></div>
+
+    <script>
+        document.getElementById("upload-form").onsubmit = async function(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById("file-input");
+            const file = fileInput.files[0];
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const response = await fetch("/upload_video/", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+
+            // 동영상 표시
+            const videoElement = document.getElementById("uploaded-video");
+            const videoSource = document.getElementById("video-source");
+            videoSource.src = result.video_path;
+            videoElement.style.display = "block";
+            videoElement.load();
+
+            // 감지 결과 표시
+            const resultsElement = document.getElementById("results");
+            resultsElement.innerHTML = "";
+            result.detection_results.forEach(function(detection) {
+                const detectionDiv = document.createElement("div");
+                detectionDiv.classList.add("detection");
+                detectionDiv.innerHTML = `
+                    <p>Frame: ${detection.frame}</p>
+                    <p>Time: ${detection.time}</p>
+                    <p class="alert">Garbage detected!!!</p>
+                `;
+                resultsElement.appendChild(detectionDiv);
+            });
+        };
+    </script>
+</body>
+</html>
