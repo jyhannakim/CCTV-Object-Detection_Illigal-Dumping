@@ -7,8 +7,12 @@ from fastapi.staticfiles import StaticFiles
 import numpy as np
 import os
 
-# YOLOv5 모델 불러오기
-model = torch.hub.load('ultralytics/yolov5', 'yolov5m')  # 모델을 'yolov5m'으로 변경
+# # YOLOv5 모델 불러오기
+# MODEL_PATH = "yolov5s_results/weights/best.pt"  # 사용자 모델 파일 경로
+#model = torch.hub.load('ultralytics/yolov5', 'yolov5m')  # 모델을 'yolov5m'으로 변경# YOLOv5 모델 불러오기
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+
+# model = torch.hub.load("ultralytics/yolov5", "custom", path=MODEL_PATH, force_reload=True)  # local model
 
 app = FastAPI()
 
