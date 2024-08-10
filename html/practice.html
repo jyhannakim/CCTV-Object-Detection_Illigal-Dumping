@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV Motion Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="prometheus_logo.png" alt="Prometheus Logo">
+            <img class="camera" src="cctv.png" alt="Camera Icon">
+        </div>
+        <div class="content">
+            <div class="title">CCTV Motion Detection <br> Illegal Dumping</div>
+            <img class="garbage" src="garbage.png" alt="Garbage Bags Icon">
+            <div class="upload-container">
+                <label for="file-input" class="upload-btn">Upload Video</label>
+                <input name="file" type="file" id="file-input" onchange="uploadVideo()">
+            </div>
+            <div class="time-inputs">
+                <input type="text" id="year" placeholder="Year" maxlength="4">
+                <input type="text" id="month" placeholder="Month" maxlength="2">
+                <input type="text" id="day" placeholder="Day" maxlength="2">
+                <input type="text" id="hour" placeholder="Hour" maxlength="2">
+                <input type="text" id="minute" placeholder="Minute" maxlength="2">
+                <select id="ampm">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <hr class="divider">
+            <h2>Detection Results</h2>
+            <pre id="results"></pre>
+            <div class="video-container">
+                <div class="video-label">CCTV Video</div>
+                <video id="video-player" controls class="video-player">
+                    <source id="video-source" src="">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="detection-info">
+                <div class="detection-frame">
+                    <img src="detected_frame.jpg" alt="Detected Frame">
+                </div>
+                <div class="detection-text">
+                    <p>Time: 00:12</p>
+                    <p>Garbage Detect!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function uploadVideo() {
+            const fileInput = document.getElementById("file-input");
+            const file = fileInput.files[0];
+
+            if (!file) return; // 파일이 선택되지 않은 경우 반환
+
+            // 파일 URL을 생성하여 동영상 플레이어에 설정
+            const videoPlayer = document.getElementById("video-player");
+            const videoSource = document.getElementById("video-source");
+            const fileURL = URL.createObjectURL(file);
+
+            videoSource.src = fileURL;
+            videoPlayer.style.display = "block";
+            videoPlayer.load();
+
+            // 서버에 파일 업로드
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const response = await fetch("/upload_video/", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById("results").innerText = JSON.stringify(result, null, 2);
+        }
+    </script>
+</body>
+</html>
