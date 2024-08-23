@@ -7,14 +7,7 @@ Due to the problem of illegal dumping of garbage, illegal dumping has been detec
 
 
 ### | Stacks
-<img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white">
-<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi">
-   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
+<img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white"><img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"><img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
 
 ### | Dataset
 [AI hub_공원 주요시설 및 불법행위 감시 CCTV 영상 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=477)<br>
@@ -66,40 +59,20 @@ There is a sidebar on the left, so you can click on the page you want. Click on 
 
 ### | Directory Structure
 ```
-prometheus5_project_AIDrivingGuide/
+CCTV-Object-Detection_Illigal-Dumping
 │
 ├── README.md         
-├── play.py   
-├── inference.py           
-├── __init__.py      
-│
-├── engine/           
-│   ├── models.py    
-│   ├── utils.py       
-│   └── __init__.py   
-│
-├── models/           
-│   ├── TrafficLights_Detection/
-│   ├── Pedestrian_Detection/
-│   └── Lane_Detection/
-│
-├── scripts/           
-│   ├── train.sh   
-│   └── inference.sh   
-│
-├── configs/           
-│   └── model.yaml     
+├── Extract_illegal_garbage_detection_from_raw_vid_version1.ipynb 
+├── index.html          
+├── script.js     
 │
 ├── assets/           
-│   ├── feedback.json
-│   └── ... 
+│   ├── readme/    
+│   ├── detect-icon.png      
+│   └── github-icon.png
+|   └── ...
 │
-└── app/              
-    ├── app.py      
-    ├── home.py      
-    ├── feedback.py      
-    ├── helper.py      
-    ├── settings.py   
-    ├── images/   
-    └── videos/
+├── styles/           
+│   ├── styles.css
+│
   ```
