@@ -1,0 +1,250 @@
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Outfit';
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 250px; /* 사이드바 너비 설정 */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .content-area {
+    position: relative;
+    margin-left: 50px; /* 사이드바 너비만큼 정확하게 설정 */
+    width: calc(100%); /* 전체 너비에서 사이드바 너비를 빼서 설정 */
+    height: 100vh; /* 전체 화면 높이 */
+    padding: 0; /* 불필요한 패딩 제거 */
+    overflow: hidden; /* 컨텐츠가 넘칠 경우 숨김 처리 */
+}
+
+header {
+  position: fixed; /* 절대 위치 설정으로 오른쪽 영역 내에서만 고정 */
+  top: 0;
+  right: 0; /* 사이드바 너비만큼 오른쪽으로 설정 */
+  left: 250px; /* 사이드바 너비만큼 왼쪽으로 설정 */
+  width: calc(100% - 250px); /* 전체 너비에서 사이드바 너비를 뺀 만큼 설정 */
+  height: 90px; /* header 높이 설정 */
+  background-color: #DEE33E;
+  padding: 10px 20px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000; /* 다른 요소 위에 위치하도록 z-index 높게 설정 */
+  font-family: 'Outfit';
+}
+
+.header_text {
+  color: #6e6e6e;
+  font-weight: bold;
+  
+}
+
+main {
+  position: relative; /* 상대 위치 설정 */
+  margin-top: 90px; /* header 높이만큼 상단 마진을 더해줌 */
+  padding: 20px;
+  overflow-y: auto; /* 필요한 경우 스크롤 가능 */
+  background: #f4f4f4; /* 배경색 설정 */
+}
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: Outfit;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0;
+    color: #363636;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #DEE33E;
+  }
+
+  .sidebar-logo {
+    display: block;
+    width: 80%; /* 이미지의 너비 조정 */
+    margin: 10px auto 20px; /* 상단, 좌우 자동, 하단 여백 설정 */
+}
+
+  .sidebar-logo-link img {
+    display: block; /* 블록 요소로 설정 */
+    margin: 0 auto; /* 자동 마진으로 중앙 정렬 */
+    width: 80%; /* 이미지 크기, 필요에 따라 조정 */
+  }
+  
+  .menu-icon {
+    height: 30px; /* 아이콘의 높이를 20px로 설정 */
+    width: auto; /* 너비는 자동으로 설정하여 비율을 유지 */
+    margin-right: 5px; /* 아이콘과 텍스트 사이에 오른쪽 여백 설정 */
+    vertical-align: middle; /* 텍스트와 수직 정렬을 중앙으로 설정 */
+  }
+
+  .sidebar-logo-link {
+    margin-bottom: 20px; /* 하단 여백 */
+  }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .center-image {
+    display: block;
+    margin: 20px auto; /* 위아래 마진 20px, 좌우 자동으로 중앙 정렬 */
+    max-width: 80%; /* 이미지 최대 너비를 80%로 제한 */
+    height: auto; /* 이미지 원본 비율 유지 */
+  }
+  
+  #main {
+    padding: 20px;
+    background-color: #ffffff;
+  }
+
+  #main h1 {
+      color: #333;
+      font-size: 24px;
+  }
+
+  section h2 {
+      color: #555;
+      font-size: 20px;
+  }
+
+  ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  li {
+      padding: 5px 0;
+      font-size: 16px;
+  }
+
+  footer {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #ddd;
+      text-align: center;
+  }
+
+  .start-button {
+    display: block;
+    width: 150px; /* 버튼 너비 */
+    padding: 10px 20px; /* 패딩 설정 */
+    margin: 20px auto; /* 중앙 정렬 */
+    background-color: #DEE33E; /* 배경 색상 */
+    color: white; /* 텍스트 색상 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 */
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    font-size: 16px; /* 폰트 크기 */
+    transition: background-color 0.3s; /* 호버 효과를 위한 전환 */
+}
+
+.start-button:hover {
+    background-color: #45a049; /* 호버 시 배경 색상 변경 */
+}
+
+.video-page {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.upload-button {
+  display: block;
+  width: auto;
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: #DEE33E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  font-family: 'Outfit';
+}
+
+.upload-button:hover {
+  background-color: #45a049;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column; /* 비디오와 설명을 수직 정렬 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  margin-top: 20px;
+}
+
+.video-section {
+  margin-bottom: 20px; /* 섹션 간의 간격 */
+}
+
+.video-section p {
+  margin-bottom: 5px; /* 비디오와 설명 텍스트 사이의 간격 */
+  font-weight: bold; /* 설명 텍스트를 볼드체로 */
+  text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+.members-page {
+  background-color: white; /* 배경을 하얀색으로 설정 */
+  padding: 20px;
+  text-align: center;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 두 개의 열로 설정 */
+  gap: 20px; /* 카드 간의 간격 */
+  margin-top: 20px;
+}
+
+.member-card {
+  background-color: #f4f4f4; /* 카드 배경 색상 */
+  padding: 30px; /* 패딩을 30px로 조정하여 카드 내부 여백을 넓힘 */
+  border-radius: 10px; /* 둥근 모서리 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 카드 그림자 */
+  text-align: center;
+  width: 85%; /* 그리드 셀의 전체 너비 사용 */
+  height: 230px; /* 카드 높이를 250px로 설정 */
+}
+
+.member-photo {
+  width: 150px; /* 프로필 사진 크기 조정 */
+  height: 150px;
+  border-radius: 50%; /* 원형 사진 */
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 10px;
+  font-size: 20px; /* 폰트 크기 증가 */
+}
+
+a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: #6666CC; /* 링크 색상 */
+}
+
+a:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  

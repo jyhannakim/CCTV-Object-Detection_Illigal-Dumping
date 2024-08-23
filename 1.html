@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Page</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Outfit&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <img src="./assets/promi.png" alt="Promi" class="sidebar-logo"> 
+        <a href="https://prometheus-ai.net/" class="sidebar-logo-link">
+            <img src="./assets/logo.png" alt="Logo"> 
+        </a>
+        <a href="javascript:void(0)" onclick="showHome()"><img src="./assets/home-icon.png" alt="Home" class="menu-icon"> Home</a>    
+        <a href="javascript:void(0)" onclick="showVideo()"><img src="./assets/detect-icon.png" alt="Detect" class="menu-icon"> Video</a>
+        <a href="javascript:void(0)" onclick="showMembers()"><img src="./assets/members-icon.png" alt="Members" class="menu-icon"> Members</a>
+        <a href="https://github.com/jyhannakim/prometheus_CCTV">
+            <img src="./assets/github-icon.png" alt="Github" class="menu-icon"> Github
+        </a>
+    </div>
+    <div class="content-area">
+      <header>
+          <h2 class = "Title"> CCTV Motion Detection_Illegal Dumping </h1>
+          <p class = "header_text"> Let's check Garbage Dumping!!  </p>
+      </header>
+
+      <main id="main" class = "home-page">
+        <img src="./assets/home1.png" alt="CCTV" class="center-image"> <!-- CCTV 이미지 추가 -->
+        <button onclick="showVideo()" class="start-button">Start</button>
+        </div>
+      </main>
+
+      <main id="main" class="video-page">
+        <h1>CCTV Motion Detection _ Illegal Dumping</h1>
+        <p>Let's check Garbage Dumping!!</p>
+    
+        <!-- 파일 업로드 버튼 -->
+        <input type="file" id="videoUpload" accept="video/*" class="upload-button">
+    
+        <!-- 비디오를 표시할 영역 -->
+        <div class="video-container">
+            <div class="video-section">
+                <p>Original Video</p>
+                <video id="uploadedVideo" controls style="display: none; width: 100%; max-width: 600px; margin-top: 10px;">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-section">
+                <p>Result Video</p>
+                <video id="resultVideo" controls style="display: none; width: 100%; max-width: 600px; margin-top: 10px;">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+
+      <main id="main" class="members-page">     
+    </main>
+
+
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
