@@ -23,13 +23,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     `;
   }
   function showVideo1() {
-    // 비디오 페이지를 로드
     document.getElementById('main').innerHTML = `
 
-        <!-- 파일 업로드 버튼 -->
         <input type="file" id="videoUpload" accept="video/*" class="upload-button">
         
-        <!-- 비디오와 프레임을 표시할 영역 -->
         <div class="video-and-frames-container">
             <div class="video-container">
                 <div class="video-section">
@@ -46,7 +43,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 </div>
             </div>
 
-            <!-- 쓰레기 감지 프레임들을 표시할 영역 -->
             <div id="garbageFramesContainer" class="frames-container"></div>
         </div>
     `;
@@ -61,7 +57,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             videoElement.style.display = 'block';
             videoElement.load();
 
-            // 10초 뒤에 결과 비디오 로드
             setTimeout(() => {
                 const resultVideoElement = document.getElementById('resultVideo');
                 const resultVideoURL = 'cctv_video/result/garbagedump_result.mp4';
@@ -69,8 +64,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 resultVideoElement.src = resultVideoURL;
                 resultVideoElement.style.display = 'block';
                 resultVideoElement.load();
-
-                // 감지된 프레임 표시
                 displayGarbageFrames([45, 139, 225]);
             }, 10000); 
         }
@@ -84,7 +77,7 @@ function displayGarbageFrames(frames) {
       frameBox.classList.add('frame-box');
       
       const img = document.createElement('img');
-      img.src = `frame/detected_frames/frame_${frameNum}.jpg`; // 프레임 이미지 경로 설정
+      img.src = `frame/detected_frames/frame_${frameNum}.jpg`; 
       img.alt = `Frame ${frameNum}`;
 
       const frameInfo = document.createElement('div');
@@ -105,9 +98,7 @@ function displayGarbageFrames(frames) {
 }
 
 function showVideo2() {
-  // 비디오 페이지를 로드
   document.getElementById('main').innerHTML = `   
-      <!-- 비디오와 프레임을 표시할 영역 -->
       <div class="video-and-frames-container">
           <div class="video-container">
               <div class="video-section">
@@ -131,14 +122,11 @@ function showVideo2() {
               </div>
           </div>
 
-          <!-- 쓰레기 감지 프레임들을 표시할 영역 -->
           <div id="garbageFramesContainer" class="frames-container"></div>
       </div>
   `;
 
-  // Detect 버튼 클릭 이벤트 리스너
   document.getElementById('detectButton').addEventListener('click', function() {
-      // 결과 비디오 로드
       const resultVideoElement = document.getElementById('resultVideo');
       const resultVideoURL = 'cctv_video/result/garbagedump_result2.mp4'; // 결과 비디오 경로
 
@@ -146,7 +134,6 @@ function showVideo2() {
       resultVideoElement.style.display = 'block';
       resultVideoElement.load();
 
-      // 감지된 프레임 표시 (프레임 번호를 변경할 수 있습니다)
       displayGarbageFrames2([38, 106, 181, 240, 301]);
   });
 }
@@ -158,7 +145,7 @@ function displayGarbageFrames2(frames) {
       frameBox.classList.add('frame-box');
       
       const img = document.createElement('img');
-      img.src = `frame/detected_frames2/frame_${frameNum}.png`; // 프레임 이미지 경로 설정
+      img.src = `frame/detected_frames2/frame_${frameNum}.png`; 
       img.alt = `Frame ${frameNum}`;
 
       const frameInfo = document.createElement('div');
